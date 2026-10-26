@@ -1,6 +1,6 @@
 # A2-DesMob
 
 ## 👥 Equipe
-- **Diego Alves Lisboa**
-- **Leonardo dos Santos Correia**
-- **Uilian Rafael Gonçalves**
+- **Diego Alves Lisboa - 20214923**
+- **Leonardo dos Santos Correia - 20235952**
+- **Uilian Rafael Gonçalves - GRR20242429**
