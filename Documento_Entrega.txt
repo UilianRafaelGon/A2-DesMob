@@ -88,4 +88,4 @@ O projeto utiliza minSdk = 29 e foi configurado para a API 29. O banco controle_
 
 10. USO DE FERRAMENTAS DE APOIO
 
-O ChatGPT foi utilizado como ferramenta de apoio à revisão e à organização textual desta documentação, assim como a revisão do código para previnir bugs e erros de compilação
+O ChatGPT foi utilizado como ferramenta de apoio à revisão e à organização textual desta documentação, assim como a revisão do código para a adição de comentários, prevenção de bugs e erros de compilação
