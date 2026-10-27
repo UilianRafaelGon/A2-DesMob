@@ -1,0 +1,91 @@
+DOCUMENTO DE ENTREGA
+
+1. INTEGRANTES
+
+Diego Alves Lisboa – 20214923
+Leonardo dos Santos Correia – 20235952
+Uilian Rafael Gonçalves – 20242429
+
+2. REPOSITÓRIO NO GITHUB
+
+Link: https://github.com/UilianRafaelGon/A2-DesMob
+
+O repositório possui histórico de commits incrementais referentes à configuração do projeto, implementação do banco SQLite, criação das telas, operações CRUD, filtros, ordenação, testes e documentação.
+
+3. TEMA E EXPLICAÇÃO DO APLICATIVO
+
+O Controle Financeiro é um aplicativo Android para gerenciamento de finanças pessoais. Permite cadastrar, consultar, editar e excluir receitas e despesas, organizadas por categoria, data e status. Os dados são armazenados localmente em SQLite, e o aplicativo calcula automaticamente os totais de receitas, despesas e saldo atual.
+
+4. REGRAS DE NEGÓCIO E ORDENAÇÃO
+
+O aplicativo implementa as seguintes regras de negócio:
+
+- Cálculo financeiro: totaliza as receitas e despesas e calcula o saldo pela fórmula Saldo = Receitas - Despesas.
+- Status das transações: permite identificar movimentações como “Pago/Recebido” ou “Pendente”.
+
+A listagem oferece quatro critérios de ordenação:
+
+- Mais recentes: ordem decrescente de cadastro (id DESC).
+- Maior valor: ordem decrescente pelo valor (valor DESC).
+- Menor valor: ordem crescente pelo valor (valor ASC).
+- Descrição (A-Z): ordem alfabética (descricao ASC).
+
+5. FILTROS DISPONÍVEIS
+
+O aplicativo disponibiliza três formas de filtragem:
+
+1. Listar todos: exibe todas as transações.
+2. Buscar por descrição: localiza registros que contenham o texto informado, utilizando LIKE no SQLite.
+3. Filtrar por tipo: permite visualizar receitas, despesas ou ambos.
+
+A busca por descrição e o filtro por tipo podem ser combinados com a ordenação escolhida.
+
+6. ESTRUTURA DO PROJETO NO ANDROID STUDIO
+
+O projeto utiliza o pacote br.ufpr.controlefinanceiro e organiza suas responsabilidades em camadas:
+
+br.ufpr.controlefinanceiro
+|-- controller
+|   |-- MainActivity.kt
+|   |-- NovaTransacaoActivity.kt
+|   |-- TransacaoAdapter.kt
+|-- data
+|   |-- dao
+|   |   |-- TransacaoDAO.kt
+|   |-- db
+|       |-- DBHelper.kt
+|-- model
+    |-- Transacao.kt
+
+- Model (Transacao.kt): representa os dados da transação, incluindo descrição, valor, tipo, categoria, data e status.
+- DBHelper: gerencia a criação e a versão do banco de dados SQLite.
+- DAO (TransacaoDAO.kt): centraliza as operações de inserção, consulta, atualização, exclusão e cálculo dos totais.
+- Controllers: controlam as telas, a navegação e os eventos do usuário.
+- Adapter: adapta as transações para exibição na ListView.
+
+7. TELAS DESENVOLVIDAS
+
+Tela principal (MainActivity): apresenta o saldo atual, os totais de receitas e despesas, a lista de transações, a busca, os filtros, a ordenação e o botão para cadastrar uma nova movimentação.
+
+Tela de cadastro, edição e exclusão (NovaTransacaoActivity): contém os campos de descrição, valor, tipo, categoria, data e status. O botão “Salvar” registra ou atualiza a transação, enquanto “Excluir”, disponível na edição, solicita confirmação antes de remover o registro.
+
+8. FLUXO DE NAVEGAÇÃO E AÇÕES
+
+1. Inicialização: a tela principal consulta o banco SQLite e exibe as transações e os totais financeiros.
+2. Cadastro: o usuário preenche o formulário, e os dados são validados antes da inserção no banco.
+3. Edição: ao selecionar uma transação na lista, o aplicativo abre o formulário com os dados existentes para alteração.
+4. Exclusão: o usuário seleciona “Excluir” e confirma a operação em uma caixa de diálogo.
+5. Atualização da listagem: ao retornar à tela principal, os dados e os totais são atualizados.
+6. Pesquisa e filtragem: o usuário pode combinar a busca por descrição, o filtro por tipo e a ordenação.
+
+A navegação entre as telas utiliza Intent, com passagem do identificador da transação para a edição.
+
+9. VALIDAÇÃO E PERSISTÊNCIA
+
+O aplicativo valida os campos antes de inserir ou atualizar registros, impedindo descrição vazia, valor inválido ou menor ou igual a zero e data obrigatória em formato inválido. Mensagens de feedback informam o resultado das operações.
+
+O projeto utiliza minSdk = 29 e foi configurado para a API 29. O banco controle_financeiro.db armazena os registros no dispositivo, permitindo que permaneçam disponíveis após o fechamento e a reabertura do aplicativo, inclusive após a reinicialização do aparelho.
+
+10. USO DE FERRAMENTAS DE APOIO
+
+O ChatGPT foi utilizado como ferramenta de apoio à revisão e à organização textual desta documentação, assim como a revisão do código para previnir bugs e erros de compilação

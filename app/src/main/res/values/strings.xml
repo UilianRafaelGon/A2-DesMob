@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Controle Financeiro</string>
+    <string name="titulo_resumo">Resumo Financeiro</string>
+    <string name="receitas">Receitas</string>
+    <string name="despesas">Despesas</string>
+    <string name="saldo_atual">Saldo Atual</string>
+    <string name="buscar_hint">Buscar por descrição...</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="nova_transacao">Nova Transação</string>
+    <string name="editar_transacao">Editar Transação</string>
+    <string name="descricao_hint">Descrição (ex: Aluguel, Salário)</string>
+    <string name="valor_hint">Valor (R$)</string>
+    <string name="data_hint">Data (DD/MM/AAAA)</string>
+    <string name="tipo_label">Tipo:</string>
+    <string name="tipo_receita">Receita</string>
+    <string name="tipo_despesa">Despesa</string>
+    <string name="categoria_label">Categoria:</string>
+    <string name="status_label">Status:</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_excluir">Excluir</string>
+    <string name="nenhuma_transacao">Nenhuma transação encontrada</string>
+</resources>
